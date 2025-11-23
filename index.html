@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Laporan Penjualan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Laporan Penjualan</h1>
+            <button id="darkToggle">🌙</button>
+        </header>
+
+        <section class="dashboard">
+            <div class="card">
+                <h3>Total Transaksi</h3>
+                <p id="totalTransaksi">0</p>
+            </div>
+            <div class="card">
+                <h3>Total Pendapatan</h3>
+                <p id="totalPendapatan">Rp 0</p>
+            </div>
+            <div class="card">
+                <h3>Produk Terjual</h3>
+                <p id="produkTerjual">0</p>
+            </div>
+        </section>
+
+        <section class="input-box">
+            <h2>Input Penjualan</h2>
+            <input type="text" id="produk" placeholder="Nama Produk">
+            <input type="number" id="harga" placeholder="Harga">
+            <input type="number" id="qty" placeholder="Qty">
+            <button onclick="tambah()">Tambah</button>
+        </section>
+
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Produk</th>
+                        <th>Harga</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="list"></tbody>
+            </table>
+        </section>
+
+        <div class="total-area">Grand Total: <span id="grand">Rp 0</span></div>
+
+        <section class="export">
+            <button onclick="exportCSV()">Export CSV</button>
+            <button onclick="exportExcel()">Export Excel</button>
+            <button onclick="exportPDF()">Export PDF</button>
+        </section>
+
+        <canvas id="chart" height="120"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
